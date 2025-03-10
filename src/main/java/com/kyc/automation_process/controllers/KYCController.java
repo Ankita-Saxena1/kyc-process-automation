@@ -28,7 +28,7 @@ public class KYCController {
         return "KYC process testing";
     }
 
-    @PostMapping("/verify-passport")
+    @PostMapping(value = "/verify-passport" , consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> verifyPassport(@RequestParam("file") MultipartFile file) throws IOException {
         RestTemplate restTemplate = new RestTemplate();
 
